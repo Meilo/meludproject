@@ -23,7 +23,7 @@
 	}
 	else
 	{
-		$session = $helper->getSessionFromRedict();
+		$session = $helper->getSessionFromRedirect();
 	}
 ?>
 
