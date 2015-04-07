@@ -19,7 +19,8 @@
 
 	if(isset($_SESSION) && isset($_SESSION['fb-token']))
 	{
-		$session = new FacebookSession($_SESSION['fb-token']);
+		//$session = new FacebookSession($_SESSION['fb-token']);
+		echo "test";
 	}
 	else
 	{
