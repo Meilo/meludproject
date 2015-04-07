@@ -2,14 +2,14 @@
 	error_reporting(E_ALL);
 	ini_set("display_error", 1);
 
-	session_start();
-
 	require "SDKPHP/autoload.php";
 
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRedirectLoginHelper;
 	use Facebook\FacebookRequest;
 	use Facebook\GraphObject;
+
+	session_start();
 
 	const APPID = "450284708481891";
 	const APPSECRET = "524593080ac4787b7d8eee65bd37955b";
