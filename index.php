@@ -15,9 +15,6 @@
 	FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
 	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/');
-	$loginUrl = $helper->getLoginUrl();
-
-
 
 	if(isset($_SESSION) && isset($_SESSION['fb-token']))
 	{
