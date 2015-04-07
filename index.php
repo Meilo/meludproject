@@ -9,6 +9,7 @@
 	use Facebook\FacebookSession;
 	use Facebook\FacebookRedirectLoginHelper;
 	use Facebook\FacebookRequest;
+	use Facebook\GraphObject;
 
 	const APPID = "450284708481891";
 	const APPSECRET = "524593080ac4787b7d8eee65bd37955b";
@@ -60,8 +61,8 @@
 			$request_user_executed = $request_user->execute();
 			$user = $request_user_executed->getGraphObject(GraphUser::className());
 
-			/*echo "bonjour".$user->getName();*/
-			var_dump($user);
+			echo "bonjour".$user->getName();
+			//var_dump($user);
 		}
 		else
 		{
