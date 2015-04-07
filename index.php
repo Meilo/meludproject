@@ -16,6 +16,17 @@
 
 	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/');
 	$loginUrl = $helper->getLoginUrl();
+
+
+
+	if(isset($_SESSION) && isset($_SESSION['fb-token']))
+	{
+		$session = new FacebookSession($_SESSION['fb-token']);
+	}
+	else
+	{
+		$session = $helper->getSessionFromRedict();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -43,17 +54,6 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
 	<h1>appli facebook</h1>
-	<?php
-
-		if(isset($_SESSION) && isset($_SESSION['fb-token']))
-		{
-			$session = new FacebookSession($_SESSION['fb-token']);
-		}
-		else
-		{
-			$session = $helper->getSessionFromRedict();
-		}
-	?>
 	<pre>
 	<?php
 		if($session)
