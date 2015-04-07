@@ -1,7 +1,25 @@
 <?php
+	error_reporting(E_ALL);
+	ini_set("display_error", 1);
+
+	session_start();
+
+	require "SDKPHP/autoload.php";
+
+	use Facebook\FacebookSession;
+	use Facebook\FacebookRedirectLoginHelper;
+
 	const APPID = "450284708481891";
-	const APPSCRET = "524593080ac4787b7d8eee65bd37955b";
+	const APPSECRET = "524593080ac4787b7d8eee65bd37955b";
+
+	FacebookSession::setDefaultApplication(APPID, APPSECRET);
+
+	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/');
+	$loginUrl = $helper->getLoginUrl();
+
+	echo $loginUrl;
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +30,7 @@
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : '450284708481891',
+	      appId      : '<?php echo APPID; ?>',
 	      xfbml      : true,
 	      version    : 'v2.3'
 	    });
