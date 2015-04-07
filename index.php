@@ -42,9 +42,33 @@
 	     fjs.parentNode.insertBefore(js, fjs);
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
-
 	<h1>appli facebook</h1>
-	<a href="<?php echo $loginUrl ?>">Cliquez</a><br>
+	<?php
+
+		if(isset($_SESSION) && isset($_SESSION['fb-token']))
+		{
+			$session = new FacebookSession($_SESSION['fb-token']);
+		}
+		else
+		{
+			$session = $helper->getSessionFromRedict();
+		}
+	?>
+	<pre>
+	<?php
+		if($session)
+		{
+			$_SESSION['fb-token'] = (string)$session->getAccessToken();
+
+			var_dump($session);
+		}
+		else
+		{
+			$loginUrl = $helper->getLoginUrl();
+			echo "<a href=".$loginUrl.">Cliquez</a><br><br>";
+		}
+	?>
+	</pre>
 	<div
   		class="fb-like"
   		data-share="true"
