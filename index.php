@@ -52,7 +52,6 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
 	<h1>appli facebook</h1>
-	<pre>
 	<?php
 		if($session)
 		{
@@ -61,7 +60,7 @@
 			$request_user_executed = $request_user->execute();
 			$user = $request_user_executed->getGraphObject(GraphUser::className());
 
-			var_dump($user);
+			echo "bonjour".$user->getName();
 		}
 		else
 		{
@@ -69,7 +68,6 @@
 			echo "<a href=".$loginUrl.">Cliquez</a><br><br>";
 		}
 	?>
-	</pre>
 	<div
   		class="fb-like"
   		data-share="true"
