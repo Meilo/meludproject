@@ -16,8 +16,6 @@
 
 	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/');
 	$loginUrl = $helper->getLoginUrl();
-
-	echo $loginUrl;
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +44,7 @@
 	</script>
 
 	<h1>appli facebook</h1>
-	<a href="<?php echo $loginUrl ?>">Cliquez</a>
+	<a href="<?php echo $loginUrl ?>">Cliquez</a><br>
 	<div
   		class="fb-like"
   		data-share="true"
