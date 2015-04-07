@@ -19,8 +19,7 @@
 
 	if(isset($_SESSION) && isset($_SESSION['fb-token']))
 	{
-		//$session = new FacebookSession($_SESSION['fb-token']);
-		echo "test";
+		$session = new FacebookSession($_SESSION['fb-token']);
 	}
 	else
 	{
@@ -54,7 +53,7 @@
 	</script>
 	<h1>appli facebook</h1>
 	<?php
-		/*if($session)
+		if($session)
 		{
 			$_SESSION['fb-token'] = (string)$session->getAccessToken();
 			$request_user = new FacebookRequest($session,"GET","/me");
@@ -67,7 +66,7 @@
 		{
 			$loginUrl = $helper->getLoginUrl();
 			echo "<a href=".$loginUrl.">Cliquez</a><br><br>";
-		}*/
+		}
 	?>
 	<div
   		class="fb-like"
