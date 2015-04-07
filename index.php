@@ -58,10 +58,10 @@
 		{
 			$_SESSION['fb-token'] = (string) $session->getAccessToken();
 			$request_user = new FacebookRequest($session,"GET","/me");
-			$request_user_executed = $request_user->execute()->getGraphObject(GraphUser::className());
-			//$user = $request_user_executed->getGraphObject(GraphUser::className());
+			$request_user_executed = $request_user->execute();
+			$user = $request_user_executed->getGraphObject(GraphUser::className());
 
-			echo "bonjour".$request_user_executed->getName();
+			echo "bonjour ".$user->getName();
 			//var_dump($user);
 		}
 		else
@@ -70,11 +70,6 @@
 			echo "<a href=".$loginUrl.">Cliquez</a><br><br>";
 		}
 	?>
-	<div
-  		class="fb-like"
-  		data-share="true"
-  		data-width="450"
- 		 data-show-faces="true">
-	</div>
+	<div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
 </body>
 </html>
