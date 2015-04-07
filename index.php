@@ -45,7 +45,7 @@
 	   }(document, 'script', 'facebook-jssdk'));
 	</script>
 
-	<p>appli facebook</p>
+	<h1>appli facebook</h1>
 
 	<div
   		class="fb-like"
