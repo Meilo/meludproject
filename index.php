@@ -46,7 +46,7 @@
 	</script>
 
 	<h1>appli facebook</h1>
-
+	<a href="<?php echo $loginUrl ?>">Cliquez</a>
 	<div
   		class="fb-like"
   		data-share="true"
