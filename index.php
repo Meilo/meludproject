@@ -60,7 +60,7 @@
 			$_SESSION['fb-token'] = $token;
 			$request_user = new FacebookRequest($session,"GET","/me");
 			$request_user_executed = $request_user->execute();
-			$user = $request_user_executed->getGraphObject('Facebook\GraphObject');
+			$user = $request_user_executed->getGraphObject('Facebook\GraphUser');
 
 			echo "bonjour ".$user->getName();
 			//var_dump($user);
