@@ -16,7 +16,7 @@
 
 	FacebookSession::setDefaultApplication(APPID, APPSECRET);
 
-	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/');
+	$helper = new FacebookRedirectLoginHelper('https://meludproject.herokuapp.com/index.php');
 
 	if(isset($_SESSION) && isset($_SESSION['fb-token']))
 	{
@@ -56,7 +56,8 @@
 	<?php
 		if($session)
 		{
-			$_SESSION['fb-token'] = (string) $session->getAccessToken();
+			$token = (string) $session->getAccessToken();
+			$_SESSION['fb-token'] = $token;
 			$request_user = new FacebookRequest($session,"GET","/me");
 			$request_user_executed = $request_user->execute();
 			$user = $request_user_executed->getGraphObject(GraphUser::className());
